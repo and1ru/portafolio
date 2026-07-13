@@ -1,7 +1,7 @@
 export function Hero() {
   return (
     <section
-      id="hero"
+      id="home"
       className="flex min-h-screen items-center justify-center bg-slate-950 px-6"
     >
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">

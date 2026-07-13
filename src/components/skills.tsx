@@ -15,11 +15,6 @@ export function Skills() {
           <h2 className="text-4xl font-bold text-white">
             Technologies I work with
           </h2>
-
-          <p className="mt-4 max-w-2xl text-slate-400">
-            These are the technologies I've learned throughout my journey as a
-            Full Stack Developer and use to build modern web applications.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -32,15 +27,26 @@ export function Skills() {
                 {group.category}
               </h3>
 
-              <div className="flex flex-wrap gap-3">
-                {group.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-medium text-slate-300 transition hover:border-blue-500 hover:text-white"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+                {group.technologies.map((tech) => {
+                  const Icon = tech.icon;
+
+                  return (
+                    <div
+                      key={tech.name}
+                      className="flex flex-col items-center rounded-xl border border-slate-800 bg-slate-950 p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-500"
+                    >
+                      <Icon
+                        size={42}
+                        className="text-blue-400"
+                      />
+
+                      <span className="mt-3 text-sm font-medium text-slate-300">
+                        {tech.name}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
